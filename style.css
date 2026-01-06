@@ -1,0 +1,197 @@
+body{
+    background-image: url(back3\ img.jpg);
+    display: flex;
+}
+ .navbar{
+    width: 40px;
+    height: 100vh;
+    background-color: rgb(244, 237, 243) transparent;
+    position: fixed;
+    right: 0%;
+    top: 0%;
+    margin-top: 100px;
+
+ }
+ .icon-box{
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    background-color: #fbfafa;
+    border-radius: 5px 0  0 5px;
+ }
+ .icon-box i{
+    color: rgb(15, 15, 16);
+    font-size: 20px;
+
+ }
+ .icon-box:hover i {
+    background: #ece3e3;
+ }
+
+
+/* self section */
+
+.self{
+    width: 350px;
+    height: 600px;
+    background-color: rgb(234, 234, 239);
+    margin: 100px 0 0 170px;
+    border-radius: 10px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.photo{
+    height: 200px;
+    width: 200px;
+    background-color: rgb(162, 181, 181);
+    background-image: url(1000053983.jpg);
+    object-fit: cover;
+    margin-top: 50px;
+    border-radius: 100px;
+}
+
+
+
+
+.mail{
+    height: 80px;
+    width: 250px;
+    /* background-color: rgb(125, 187, 132); */
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+.mail a{
+    color: black;
+}
+.mail a:hover{
+    color: royalblue;
+}
+
+.job{
+    height: 50px;
+    width: 250px;
+    background-color: rgb(174, 213, 250);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.links{
+      height: 80px;
+    width: 250px;
+    /* background-color: rgb(207, 230, 149); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+}
+#icon{
+    font-size: 25px;
+    cursor: pointer;
+    color: black;
+    transition: color 0.3s ease;;
+
+}
+#icon:hover{
+   color: rgb(78, 78, 242);
+    transform: scale(1.2);
+}
+
+
+
+.resum{
+    height: 50px;
+    width: 300px;
+    background-color: rgb(101, 165, 238);
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    cursor: pointer;   
+}
+.resum a{
+    color: rgb(245, 241, 241);
+    text-decoration: none;
+    cursor: pointer;
+}
+.resum a:hover{
+     color: rgb(78, 78, 242);
+}
+
+
+
+.bio{
+    width: 900px;
+    height: 1900px;
+    background-color: rgb(234, 234, 239);
+    margin: 100px 0 0 530px;
+    border-radius: 10px;
+    padding: 0 20px 0 20px;
+} 
+.hello{
+    height: 100px;
+    background-color: rgb(240, 240, 249);
+    padding: 0 20px 0 20px;
+    
+}
+.aboutme{
+    height: 300px;
+    padding: 0 20px 10PX 20px;
+    background-color: rgb(240, 240, 249);
+}
+p{
+    color: rgb(20, 8, 8);
+    font-size: 25px;
+}
+.skills{
+    height: 400px;
+    background-color: rgb(240, 240, 249);
+    padding: 0 20px 0 20px;
+
+}
+li{
+    font-size: 20px;
+    margin: 10px 0 10px 0;
+}
+.projects{
+    height: 300px;
+    background-color: rgb(240, 240, 249);
+}
+.pro{
+    height: 100px;
+    width: 130px;
+    background-color: rgb(213, 225, 237);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+     
+}
+a{
+    color: rgb(25, 20, 20);
+    text-decoration: none;
+    font-size: 25px;
+    
+}
+a:hover{
+    color: rgb(58, 151, 250);
+    transform: scale(1.1);
+}
+.footer{
+    height: 200px;
+    background-color: rgb(240, 240, 249);
+    padding: 0 0 0 20px;
+}
+.num{
+    font-size: 20px;
+    cursor: pointer;
+}
+
