@@ -214,4 +214,34 @@ a:hover{
     
     
 }
+@media only screen and (max-width: 1200px){
+    .bio{
+        width: 700px;
+    }
+}
+@media only screen and (max-width: 800px){
+    .bio{
+        width: 500px;
+        margin: 100px 0 0 300px;
+    }
+    .self{
+        margin: 100px 0 0 100px;
+    }
+}
+@media only screen and (max-width: 600px){
+    .bio{
+        width: 350px;
+        margin: 100px 0 0 170px;
+    }
+    .self{
+        margin: 100px 0 0 100px;
+    }
+}
+@media only screen and (max-width: 400px){
+    .self{
+        margin: 100px 0 0 50px;
+    }
+}
+
+
 
