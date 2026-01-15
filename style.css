@@ -46,11 +46,11 @@ body{
 /* self section */
 
 .self{
-    width: 100%;
+    width: 500px;
     max-width: 350px;
-    height: auto;
+    height: 600px;
     background-color: rgb(234, 234, 239);
-    margin: 100px auto 0 auto;
+    margin: 100px auto 0 90px;
     border-radius: 10px;
     position: relative;
     display: flex;
@@ -171,9 +171,9 @@ body{
 
 
 .bio{
-    width: 100%;
-    flex: 1;
-    min-width: 0;
+    width: 1000px;
+    /* flex: 1; */
+    /* min-width: 0; */
     background-color: rgb(234, 234, 239);
     margin: 100px 0 0 0;
     border-radius: 10px;
