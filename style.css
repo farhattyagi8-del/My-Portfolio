@@ -273,23 +273,45 @@ li:hover {
 }
 
 .pro{
-    height: auto;
+     height: auto; 
     width: 100%;
     max-width: 200px;
-    padding: 15px;
+    padding: 10px;
     background-color: rgb(213, 225, 237);
     align-items: center;
     display: flex;
     justify-content: center;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 10px;
     transition: all 0.3s ease;
+    gap: 15px
 }
-
-.pro:hover {
-    background-color: rgb(101, 165, 238);
+.pro1{
+    background-color: rgb(139, 139, 215);
+    height: 50px;
+    width: 200px;
+    border-radius: 5px;
+}
+.pro2{
+    background-color: rgb(218, 89, 208);
+     height: 50px;
+    width: 200px;
+    border-radius: 5px;
+}
+.pro1{
+    background-color: rgb(127, 168, 255);
     transform: translateY(-5px);
 }
+.pro2{
+    background-color: rgb(127, 168, 255);
+    transform: translateY(-5px);
+}
+.wri{
+    font-size: 1.15rem;
+    color: rgb(240, 240, 247);
+    
+}
+
 
 .pro a {
     font-size: clamp(0.9rem, 3vw, 1.1rem);
