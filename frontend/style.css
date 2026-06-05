@@ -249,6 +249,40 @@ li:hover {
     color: white;
 }
 
+.certificate{
+    height: auto;
+    background-color: rgb(240, 240, 249);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    list-style: none;
+}
+.certificate ul {
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+.cer-item{
+    position: relative;
+    height: 300px;
+    width: 100%;
+    max-width: 400px;
+    background-color: rgb(213, 225, 237);
+    margin-top: 15px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.cer-item img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
 .projects{
     height: auto;
     background-color: rgb(240, 240, 249);
@@ -275,43 +309,50 @@ li:hover {
 .pro{
      height: auto; 
     width: 100%;
-    max-width: 200px;
     padding: 10px;
     background-color: rgb(213, 225, 237);
-    align-items: center;
     display: flex;
-    justify-content: center;
+    align-items: center;
     border-radius: 10px;
     margin-top: 10px;
     transition: all 0.3s ease;
-    gap: 15px
+    gap: 50px;
 }
-.pro1{
-    background-color: rgb(139, 139, 215);
-    height: 50px;
-    width: 200px;
-    border-radius: 5px;
+.pro1, .pro2, .pro3 {
+    background-color: #ffff;
+    padding: 20px;
+    margin: 10px;
+    height: 300px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
 }
-.pro2{
-    background-color: rgb(218, 89, 208);
-     height: 50px;
-    width: 200px;
-    border-radius: 5px;
-}
-.pro1{
-    background-color: rgb(127, 168, 255);
-    transform: translateY(-5px);
-}
-.pro2{
-    background-color: rgb(127, 168, 255);
-    transform: translateY(-5px);
+.box-img{
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
 }
 .wri{
-    font-size: 1.15rem;
-    color: rgb(240, 240, 247);
+    font-size: 2rem;
+    font-weight: bolder;
+    font-family: Arial, sans-serif;
+    color: rgb(8, 8, 76);
+    cursor: pointer;
     
 }
-
+#shw{
+    font-size: 1.5rem;
+    color: rgb(8, 8, 76);
+    transition: color 0.3s ease;
+    margin-left: 45px;
+}
 
 .pro a {
     font-size: clamp(0.9rem, 3vw, 1.1rem);
@@ -492,4 +533,19 @@ a:hover{
 }
 
 
+
+.box{
+    height: 400px;
+    width: 23%;
+    background-color: white;
+    padding: 20px 0px 15px;
+    margin-top: 15px;
+}
+.box-img{
+    height: 200px;
+    background-size: cover;
+    object-fit: cover;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 
