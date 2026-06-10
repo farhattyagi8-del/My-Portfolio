@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Authentication</title>
+
+<link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1 id="title">Create Account</h1>
+
+<div class="toggle">
+
+<button id="registerBtn" class="active">
+Register
+</button>
+
+<button id="loginBtn">
+Login
+</button>
+
+</div>
+
+<form id="authForm">
+
+<input
+type="text"
+id="name"
+placeholder="Enter your name"
+/>
+
+<input
+type="email"
+id="email"
+placeholder="Enter email"
+required
+/>
+
+<input
+type="password"
+id="password"
+placeholder="Enter password"
+required
+/>
+
+<button type="submit" id="submitBtn">
+
+Register
+
+</button>
+
+</form>
+
+<p id="message"></p>
+
+</div>
+
+</div>
+
+<script src="auth.js"></script>
+
+</body>
+</html>
