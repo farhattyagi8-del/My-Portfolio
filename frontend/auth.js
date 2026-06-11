@@ -106,14 +106,13 @@ nameInput.value;
 }
 
 const endpoint=
-isLogin
+isLoginc
 ?
-
-"http://localhost:5000/api/auth/login" 
+"http://127.0.0.1:5000/api/auth/login"
 
 :
 
-"http://localhost:5000/api/auth/register";
+"http://127.0.0.1:5000/api/auth/register" ;
 
 try{
 
