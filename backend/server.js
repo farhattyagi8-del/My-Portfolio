@@ -1,68 +1,15 @@
-// const express = require('express');
-// const cors = require('cors');
-
-// const dotenv = require('dotenv');
-// const connectDB = require('./config/db');
-
-
-
-
-// dotenv.config();
-
-// const app = express();
-// app.use(cors({
-//     origin: "http://127.0.0.1:5500",
-//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//     allowedHeaders: ['Content-Type', 'Authorization'],
-//     credentials: true,
-// }));
-
-// app.use(express.json());
-// app.use('/api/auth', require('./routes/authRoutes'));
-
-// const PORT = process.env.PORT || 5000;
-
-// const startServer = async () => {
-//     await connectDB();
-//     app.listen(PORT, () => {
-//         console.log(`Server running on port ${PORT}`);
-//     });
-// };
-
-// startServer();
-
-// const express = require('express');
-// const cors = require('cors');
-
-// const dotenv = require('dotenv');
-// const connectDB = require('./config/db');
-
-// dotenv.config();
-
-// const app = express();
-
-// app.use(cors());
-// app.use(express.json());
-
-// app.use('/api/auth', require('./routes/authRoutes'));
-
-// const PORT = process.env.PORT || 5000;
-
-// const startServer = async () => {
-//     await connectDB();
-//     app.listen(PORT, () => {
-//         console.log(`Server running on port ${PORT}`);
-//     });
-// };
-
-// startServer();
 
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+dotenv.config();
+const session = require('express-session');
+const passport = require('passport');
+require('./config/passport'); 
+console.log("passport loaded")// Ensure passport config is loaded
 const connectDB = require('./config/db');
 
-dotenv.config();
+
 
 const app = express();
 
@@ -79,9 +26,25 @@ app.use(cors({
     optionsSuccessStatus: 200,
 }));
 
+app.use(
+session({
+secret: process.env.SESSION_SECRET,
+resave:false,
+saveUninitialized:false
+})
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 app.use(express.json());
 
+app.get('/.well-known/appspecific/com.chrome.devtools.json', (req, res) => {
+    res.json({});
+});
+
+console.log("AUTH ROUTES LOADED");
 app.use('/api/auth', require('./routes/authRoutes'));
 
 const PORT = process.env.PORT || 5000;

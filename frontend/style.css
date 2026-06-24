@@ -10,6 +10,98 @@ body{
     flex-wrap: wrap;
     background-size: cover;
     background-attachment: fixed;
+
+ }
+
+
+ #closePopup{
+    height: 50px;
+    width: 50px;
+    color: aliceblue;
+    font-size: 30px;
+    font-weight: bold;
+    border: none;
+    margin-right: 100px;
+    border-radius: 30px;
+    transition: .3s ;
+    background-color: rgb(113, 172, 250);
+    margin-top: 0%;
+    
+ }
+ #closePopup:hover{
+     transform: scale(1.2) ;
+    color: rgb(195, 216, 246);
+ }
+.auth-popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+#successMessage{
+font-size:20px;
+margin-top:20px;
+font-weight:bold;
+}
+ /* .auth-popup{
+display:none;
+position:fixed;
+margin: 60px  0 0 550px;
+top:0;
+left:0;
+background:rgba(194, 192, 192, 0.5);
+justify-content:center;
+align-items:center;
+z-index:999;
+border-radius: 10px;
+padding: 40px;
+} */
+.wel{
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 40px;
+}
+.wmp{
+    font-size: 20px;
+    font-weight: 900;
+}
+.lio{
+    font-size: 25px;
+    font-weight: 200;
+    margin-top: 15px;
+}
+.login{
+    height: 40px;
+    width: 250px;
+    background-color: rgb(148, 206, 254);
+    transition: .3s;
+    border-radius: 5px;
+    border: none;
+    margin-top: 60px;
+}
+ .login:hover{
+    transform: scale(1.2) ;
+    color: rgb(195, 216, 246);
+
+}
+
+.log{
+    font-size: 20px;
+    font-weight: 600;
+}
+.auth-box{
+background:white;
+padding:60px;
+border-radius:12px;
+position:relative;
+text-align:center;
+
 }
 
 .navbar{

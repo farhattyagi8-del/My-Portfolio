@@ -6,6 +6,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
+
 // Connect to MongoDB
 mongoose.connect("mongodb://localhost:27017/portfolio")
 .then(() => {
@@ -24,7 +26,7 @@ const ContactSchema = new mongoose.Schema({
 const Contact = mongoose.model("Contact", ContactSchema);
 
 // Routes
-app.post("/Contact", async (req, res) => {
+app.post("/Contact", async (req, res) => {   // its api of monodb 
     await Contact.create(req.body);
     res.send(" Message saved");
 });
@@ -34,3 +36,4 @@ app. listen(5000, () => {
 });
 
 let user 
+

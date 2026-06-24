@@ -10,11 +10,9 @@ body{
 min-height:100vh;
 
 display:flex;
-
 justify-content:center;
-
 align-items:center;
-
+justify-items: center;
 background:#f5f5f5;
 
 }
@@ -78,15 +76,18 @@ border-radius:10px;
 .active{
 
 background:black;
-
+font-size: 1rem;
 color:white;
 
+}
+#loginBtn{
+    font-size: 1rem;
 }
 
 input{
 
 width:100%;
-
+font-size: 1rem;
 padding:14px;
 
 margin-bottom:15px;
@@ -100,7 +101,7 @@ border-radius:10px;
 #submitBtn{
 
 width:100%;
-
+font-size: 1rem;
 padding:14px;
 
 border:none;
@@ -122,3 +123,30 @@ margin-top:15px;
 text-align:center;
 
 }
+
+#googleBtn{
+  height: 50px;
+  width: 300px;
+  border: 2px solid black;
+  border-radius: 40px;
+  background-color: rgb(249, 254, 252);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+span{
+    font-size: 1rem;
+    font-weight: bold;
+}
+ #googleBtn :hover{
+     transform: scale(1.2); 
+     
+ }
+#googleimg{
+    height: 50px;
+    width: 50px;
+}
+ 
+
+

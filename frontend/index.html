@@ -10,6 +10,19 @@
 </head>
 <body>
 
+     <div id="authPopup" class="auth-popup">
+        <div class="auth-box">
+            <button id="closePopup">X</button>
+            <h2 class="wel">Welcome</h2>
+            <P class="wmp">to My Portfolio</P>
+            <p class="lio">Login to continue</p>
+            <a href="http://127.0.0.1:5500/My-Portfolio/frontend/auth.html"><span class="login"><p class="log">Login..</p></span></a>
+            <p id="successMessage"></p>
+        </div>
+     </div>
+
+
+
     <div class="navbar">
         <div class="icon-box">
             <a href="#contect"><i class="fa-solid fa-house"></i></a> 
@@ -30,6 +43,12 @@
          <div class="icon-box">
             <a href="#contect"><i class="fa-solid fa-phone"></i></a> 
         </div>
+
+        <div class="icon-box">
+            <a href="http://127.0.0.1:5500/My-Portfolio/frontend/auth.html"><i class="fa-solid fa-right-to-bracket"></i></a>
+        </div>
+        
+      
     </div>
 
 
@@ -157,11 +176,91 @@
            </div>
               
     </footer>
+<!-- 
+     <script>
+      // Check if user is logged in
+      const token = localStorage.getItem('token');
+      if (!token) {
+        alert('Please login first');
+        window.location.href = window.location.origin + '/frontend/auth.html';
+      }
+      
+      function logoutUser() {
+        localStorage.removeItem('token');
+        window.location.href = window.location.origin + '/frontend/auth.html';
+      }
+      
+      // Also save token from URL if present
+      const params = new URLSearchParams(window.location.search);
+      const urlToken = params.get('token');
+      if (urlToken) {
+        localStorage.setItem('token', urlToken);
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+    </script> -->
+    
+
+<!-- // URL se token lo
+
+// const params =
+// new URLSearchParams(+
+// window.location.search
+// );
+
+// const urlToken =
+// params.get("token");
+
+// if(urlToken){
+
+// localStorage.setItem(
+// "token",
+// urlToken
+// );
+
+// // URL clean
+// window.history.replaceState(
+// {},
+// document.title,
+// window.location.pathname
+// );
+
+// }
 
 
-    
-    
-    
-      </div>
-</body>
+// // login check
+
+// const token =
+// localStorage.getItem(
+// "token"
+// );
+
+// if(!token){
+
+// alert(
+// "Please login first"
+// );
+
+// window.location.href =
+// window.location.origin +
+// "/auth.html";
+
+// }
+
+
+// // logout
+
+// function logoutUser(){
+
+// localStorage.removeItem(
+// "token"
+// );
+
+// window.location.href =
+// window.location.origin +
+// "/auth.html";
+
+// } -->
+
+  <script src="script.js"></script>
+ </body>
 </html>

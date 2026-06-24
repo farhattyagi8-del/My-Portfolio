@@ -1,3 +1,36 @@
+// Handle Google OAuth callback
+const urlParams = new URLSearchParams(window.location.search);
+const token = urlParams.get('token');
+const error = urlParams.get('error');
+
+
+console.log('Auth page loaded with token:', !!token, 'error:', error); 
+
+if (error) {
+  console.error('Login error:', error);
+  alert('Google login failed: ' + decodeURIComponent(error));
+}
+
+if (token) {
+  console.log('Token found, saving to localStorage and redirecting...');
+  // localStorage.setItem('token', token);
+  //  localStorage.setItem('loggedIn', 'true' )  
+   sessionStorage.setItem("token", token);
+   
+   sessionStorage.setItem("showLoginSuccess", "true");
+  //  window.location.href = "index.html"; }
+
+  const redirectUrl = window.location.origin + '/index.html';
+  console.log('Redirecting to:', redirectUrl);
+  // Use setTimeout to ensure localStorage is written
+  setTimeout(() => {
+    window.location.href = redirectUrl;
+  }, 100);
+} else {
+  console.log('No token in URL, showing auth form');
+  
+}
+
 const form =
 document.getElementById("authForm");
 
@@ -13,6 +46,8 @@ document.getElementById("email");
 const password =
 document.getElementById("password");
 
+const otp = document.getElementById('otp');
+
 const submit =
 document.getElementById("submitBtn");
 
@@ -25,8 +60,13 @@ document.getElementById("registerBtn");
 const loginBtn =
 document.getElementById("loginBtn");
 
-let isLogin = false;
+const googleBtn =
+document.getElementById("googleBtn");
 
+let isLogin = false;
+let isOtpStep = false;
+
+otp.style.display = "none";
 
 
 registerBtn.onclick = () => {
@@ -57,9 +97,11 @@ loginBtn.classList.remove(
 loginBtn.onclick = () => {
 
 isLogin = true;
+isOtpStep = false;
 
-title.innerText =
-"Login";
+otp.style.display = "none";
+
+title.innerText ="Login";
 
 nameInput.style.display =
 "none";
@@ -88,6 +130,74 @@ e.preventDefault();
 
 message.innerText="";
 
+if(isOtpStep){
+
+  // try{
+
+  // }
+
+  // catch{
+  //   message.innerText = "OTP verification failed"
+  // }
+
+const response =
+await fetch(
+
+"http://127.0.0.1:5000/api/auth/verify-otp",
+
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:
+JSON.stringify({
+
+email:
+email.value,
+
+otp:
+otp.value
+
+})
+
+}
+
+);
+
+const result =
+await response.json();
+
+message.innerText =
+result.message;
+
+if(response.ok){
+
+email.disabled = false;
+
+password.disabled = false;
+
+nameInput.disabled = false;
+
+otp.style.disabled = "none";
+
+submit.innerText =
+"Login";
+
+isOtpStep =
+false;
+
+loginBtn.click();
+
+}
+
+return;
+
+}
+
 const data={
 
 email:
@@ -106,7 +216,7 @@ nameInput.value;
 }
 
 const endpoint=
-isLoginc
+isLogin
 ?
 "http://127.0.0.1:5000/api/auth/login"
 
@@ -144,7 +254,7 @@ if(response.ok){
 
 if(isLogin){
 
-localStorage.setItem(
+sessionStorage.setItem(
 
 "token",
 
@@ -152,17 +262,26 @@ result.token
 
 );
 
-window.location.href=
-"index.html";
+sessionStorage.setItem('showLoginSuccess', 'true');
+
+window.location.href= 'index.html';
 
 }
 
 else{
 
-message.innerText=
-"Registered Successfully";
+// message.innerText=
+// "Registered Successfully";
 
-loginBtn.click();
+message.innerText = "OTP sent to  your email";
+
+email.disabled = true;
+password.disabled = true;
+nameInput.disabled = true;
+otp.style.display = "block";
+submit.innerText = "Verify OTP";
+isOtpStep = true;
+// loginBtn.click();
 
 }
 
@@ -187,3 +306,8 @@ message.innerText=
 }
 
 );
+
+googleBtn.onclick = () => {
+  console.log('Google button clicked, redirecting to OAuth...');
+   window.location.href = 'http://127.0.0.1:5000/api/auth/google';
+};
