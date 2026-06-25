@@ -7,6 +7,7 @@ const session = require('express-session');
 const passport = require('passport');
 require('./config/passport'); 
 console.log("passport loaded")// Ensure passport config is loaded
+
 const connectDB = require('./config/db');
 
 
