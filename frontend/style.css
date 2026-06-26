@@ -341,6 +341,14 @@ li:hover {
     color: white;
 }
 
+.tools{
+        height: auto;
+    background-color: rgb(240, 240, 249);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
 .certificate{
     height: auto;
     background-color: rgb(240, 240, 249);
@@ -364,6 +372,8 @@ li:hover {
     margin-top: 15px;
     overflow: hidden;
     border-radius: 5px;
+    width:100%;
+
 }
 .cer-item img {
     position: absolute;
@@ -431,6 +441,18 @@ li:hover {
     background-repeat: no-repeat;
     border-radius: 10px;
 }
+.box{
+    height: 400px;
+    background-color: white;
+    padding: 20px 0px 15px;
+    margin-top: 15px;
+}
+  .box-img{
+    height: 200px;
+    object-fit: cover;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+} 
 .wri{
     font-size: 2rem;
     font-weight: bolder;
@@ -626,18 +648,308 @@ a:hover{
 
 
 
-.box{
-    height: 400px;
-    width: 23%;
-    background-color: white;
-    padding: 20px 0px 15px;
-    margin-top: 15px;
-}
-.box-img{
-    height: 200px;
-    background-size: cover;
-    object-fit: cover;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+
+ 
+/* ====================================
+RESPONSIVE FIX ONLY
+(NO DESIGN CHANGES)
+Paste at END of style.css
+==================================== */
+
+
+/* DESKTOP SAFE */
+body{
+overflow-x:hidden;
 }
 
+
+/* POPUP */
+
+@media (max-width:768px){
+
+.auth-popup{
+padding:20px;
+}
+
+.auth-box{
+
+width:100%;
+
+max-width:400px;
+
+padding:30px 20px;
+
+margin:auto;
+
+}
+
+#closePopup{
+
+margin-right:0;
+
+width:45px;
+
+height:45px;
+
+font-size:24px;
+
+}
+
+.login{
+
+width:100%;
+
+max-width:250px;
+
+}
+
+.wel{
+
+font-size:2.2rem;
+
+}
+
+}
+
+
+/* MAIN LAYOUT */
+
+@media (max-width:1024px){
+
+body{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.self{
+
+margin:80px auto 20px auto;
+
+}
+
+.bio{
+
+width:95%;
+
+margin:20px auto;
+
+margin-right:0;
+
+}
+
+.footer{
+
+width:95%;
+
+margin:20px auto;
+
+margin-right:0;
+
+}
+
+}
+
+
+/* TABLET */
+
+@media (max-width:768px){
+
+.self{
+
+width:90%;
+
+max-width:350px;
+
+}
+
+.bio{
+
+width:95%;
+
+}
+
+.footer{
+
+width:95%;
+
+}
+
+.skills ul{
+
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(130px,1fr)
+);
+
+}
+
+.pro{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:20px;
+
+}
+
+.pro1,
+.pro2,
+.pro3{
+
+width:280px;
+
+}
+
+.contact-info{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+}
+
+
+/* MOBILE */
+
+@media (max-width:480px){
+
+.self{
+
+width:100%;
+
+max-width:none;
+
+margin-top:70px;
+
+}
+
+.photo{
+
+width:100px;
+
+height:100px;
+
+}
+
+.bio{
+
+width:100%;
+
+padding:15px;
+
+}
+
+.footer{
+
+width:100%;
+
+padding:15px;
+
+}
+
+.job,
+.links,
+.mail,
+.resum{
+
+max-width:100%;
+
+}
+
+.skills ul{
+
+grid-template-columns:1fr;
+
+}
+
+
+/* CERTIFICATE */
+
+.certificate{
+
+overflow:hidden;
+
+}
+
+.cer-item{
+
+width:100%;
+
+max-width:100%;
+
+height:auto;
+
+}
+
+.cer-item img{
+
+position:static;
+
+width:100%;
+
+height:auto;
+
+object-fit:contain;
+
+}
+
+
+/* PROJECT */
+
+.pro{
+
+padding:10px;
+
+}
+
+.pro1,
+.pro2,
+.pro3{
+
+width:100%;
+
+max-width:320px;
+
+}
+
+.box-img{
+
+height:180px;
+
+}
+
+.wri{
+
+font-size:1rem;
+
+}
+
+#shw{
+
+margin-left:10px;
+
+}
+
+
+/* FOOTER */
+
+.contact-info{
+
+flex-direction:column;
+
+}
+
+.contact-info a{
+
+word-break:break-word;
+
+}
+
+}
