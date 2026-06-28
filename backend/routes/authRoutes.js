@@ -200,7 +200,7 @@ router.get('/google/callback', (req, res, next) => {
             }
 
             const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
-            const redirectUrl = `http://127.0.0.1:5500/My-Portfolio/frontend/index.html?token=${encodeURIComponent(token)}&login=success`;
+            const redirectUrl = `https://my-portfolio-psi-ivory-67.vercel.app/index.html?token=${encodeURIComponent(token)}&login=success`;
             return res.redirect(redirectUrl);
         } catch (error) {
             console.error('Error during Google authentication:', error);
