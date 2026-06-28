@@ -5,10 +5,10 @@ const dotenv = require('dotenv');
 dotenv.config();
 const session = require('express-session');
 const passport = require('passport');
-require('./config/passport'); 
+require('./Config/passport'); 
 console.log("passport loaded")// Ensure passport config is loaded
 
-const connectDB = require('./config/db');
+const connectDB = require('./Config/DB');
 
 
 
