@@ -15,7 +15,7 @@ const connectDB = require('./Config/DB');
 const app = express();
 
 
-const allowedOrigins = ['http://127.0.0.1:5500', 'http://localhost:5500' ,' https://my-portfolio-psi-ivory-67.vercel.app/ '] ;
+const allowedOrigins = ['http://127.0.0.1:5500', 'http://localhost:5500' ,'https://my-portfolio-psi-ivory-67.vercel.app'];
 
 app.use(cors({
     origin: (origin, callback) => {
