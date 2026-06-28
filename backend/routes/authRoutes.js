@@ -196,7 +196,7 @@ router.get('/google/callback', (req, res, next) => {
         try {
             if (err || !user) {
                 const errorMessage = err?.message || 'User not authenticated';
-                return res.redirect(`http://127.0.0.1:5500/My-Portfolio/frontend/auth.html?error=${encodeURIComponent(errorMessage)}`);
+                return res.redirect(`https://my-portfolio-psi-ivory-67.vercel.app/auth.html?error=${encodeURIComponent(errorMessage)}`);
             }
 
             const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
@@ -204,7 +204,7 @@ router.get('/google/callback', (req, res, next) => {
             return res.redirect(redirectUrl);
         } catch (error) {
             console.error('Error during Google authentication:', error);
-             return res.redirect(`http://127.0.0.1:5500/My-Portfolio/frontend/auth.html?error=${encodeURIComponent(error.message)}`);
+             return res.redirect(`https://my-portfolio-psi-ivory-67.vercel.app/auth.html?error=${encodeURIComponent(error.message)}`);
         }
     })(req, res, next);
 });
