@@ -143,7 +143,7 @@ if(isOtpStep){
 const response =
 await fetch(
 
-"http://127.0.0.1:5000/api/auth/verify-otp",
+"https://my-portfolio-la7j.onrender.com/api/auth/verify-otp",
 
 {
 
@@ -218,11 +218,11 @@ nameInput.value;
 const endpoint=
 isLogin
 ?
-"http://127.0.0.1:5000/api/auth/login"
+"https://my-portfolio-la7j.onrender.com/api/login"
 
 :
 
-"http://127.0.0.1:5000/api/auth/register" ;
+"https://my-portfolio-la7j.onrender.com/api/register" ;
 
 try{
 

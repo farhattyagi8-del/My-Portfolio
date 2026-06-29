@@ -45,6 +45,10 @@ app.get('/.well-known/appspecific/com.chrome.devtools.json', (req, res) => {
     res.json({});
 });
 
+app.get("/api/auth/test", (req, res) => {
+    res.send("Backend working");
+});
+
 console.log("AUTH ROUTES LOADED");
 app.use('/api/auth', require('./routes/authRoutes'));
 
