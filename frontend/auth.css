@@ -18,59 +18,37 @@ background:#f5f5f5;
 }
 
 .container{
-
 width:100%;
-
 display:flex;
-
 justify-content:center;
 
 }
 
 .card{
-
 background:white;
-
 padding:40px;
-
 border-radius:18px;
-
 width:400px;
-
 box-shadow:0 8px 25px rgba(0,0,0,.08);
-
 }
 
 h1{
-
 text-align:center;
-
 margin-bottom:20px;
-
 }
 
 .toggle{
-
 display:flex;
-
 gap:10px;
-
 margin-bottom:20px;
-
 }
 
 .toggle button{
-
 flex:1;
-
 padding:12px;
-
 border:none;
-
 cursor:pointer;
-
 border-radius:10px;
-
 }
 
 .active{
@@ -85,43 +63,29 @@ color:white;
 }
 
 input{
-
 width:100%;
 font-size: 1rem;
 padding:14px;
-
 margin-bottom:15px;
-
 border:1px solid #ddd;
-
 border-radius:10px;
 
 }
 
 #submitBtn{
-
 width:100%;
 font-size: 1rem;
 padding:14px;
-
 border:none;
-
 background:black;
-
 color:white;
-
 border-radius:10px;
-
 cursor:pointer;
-
 }
 
 #message{
-
 margin-top:15px;
-
 text-align:center;
-
 }
 
 #googleBtn{
@@ -149,11 +113,8 @@ span{
 }
  
 
-
-/* =========================
-RESPONSIVE ONLY
-Paste at END
-========================= */
+/* RESPONSIVE ONLY
+Paste at END */
 
 
 /* Tablet */
@@ -161,57 +122,37 @@ Paste at END
 @media (max-width:768px){
 
 .card{
-
 width:90%;
-
 max-width:400px;
-
 padding:30px;
-
 }
 
 h1{
 
-font-size:2rem;
-
-}
+font-size:2rem; }
 
 input{
-
 padding:13px;
-
 }
 
 #submitBtn{
-
 padding:13px;
-
 }
 
 #googleBtn{
-
 width:100%;
-
 max-width:300px;
-
 margin:auto;
-
 }
 
 #googleimg{
-
 width:40px;
-
 height:40px;
-
 }
 
 span{
-
 font-size:.95rem;
-
 }
-
 }
 
 
@@ -220,103 +161,63 @@ font-size:.95rem;
 @media (max-width:480px){
 
 body{
-
 padding:15px;
-
 }
 
 .container{
-
 width:100%;
-
 padding:0;
-
 }
 
 .card{
-
 width:100%;
-
 padding:20px;
-
 border-radius:14px;
-
 }
 
 h1{
-
 font-size:1.7rem;
-
 margin-bottom:18px;
-
 }
 
 .toggle{
-
 flex-direction:row;
-
 gap:8px;
-
 }
 
 .toggle button{
-
 padding:10px;
-
 font-size:.95rem;
-
 }
 
 input{
-
 padding:12px;
-
 font-size:.95rem;
-
 }
 
 #submitBtn{
-
 padding:12px;
-
 font-size:1rem;
-
 }
 
 #googleBtn{
-
 width:100%;
-
 height:55px;
-
 padding:10px;
-
 gap:8px;
-
 }
-
 #googleimg{
-
 height:32px;
-
 width:32px;
-
 }
-
 span{
-
 font-size:.9rem;
-
 text-align:center;
-
 }
 
 #message{
-
 font-size:.9rem;
-
 word-break:break-word;
-
 }
 
 }

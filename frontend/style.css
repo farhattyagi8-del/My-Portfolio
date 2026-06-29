@@ -649,12 +649,7 @@ a:hover{
 
 
 
- 
-/* ====================================
-RESPONSIVE FIX ONLY
-(NO DESIGN CHANGES)
-Paste at END of style.css
-==================================== */
+
 
 
 /* DESKTOP SAFE */
@@ -672,41 +667,27 @@ padding:20px;
 }
 
 .auth-box{
-
 width:100%;
-
 max-width:400px;
-
 padding:30px 20px;
-
 margin:auto;
-
 }
 
 #closePopup{
 
 margin-right:0;
-
 width:45px;
-
 height:45px;
-
 font-size:24px;
-
 }
 
 .login{
-
 width:100%;
-
 max-width:250px;
-
 }
 
 .wel{
-
 font-size:2.2rem;
-
 }
 
 }
@@ -717,37 +698,24 @@ font-size:2.2rem;
 @media (max-width:1024px){
 
 body{
-
 flex-direction:column;
-
 align-items:center;
-
 }
 
 .self{
-
 margin:80px auto 20px auto;
-
 }
 
 .bio{
-
 width:95%;
-
 margin:20px auto;
-
 margin-right:0;
-
 }
 
 .footer{
-
 width:95%;
-
 margin:20px auto;
-
 margin-right:0;
-
 }
 
 }
@@ -758,27 +726,20 @@ margin-right:0;
 @media (max-width:768px){
 
 .self{
-
 width:90%;
-
 max-width:350px;
-
 }
 
 .bio{
-
 width:95%;
-
 }
 
+
 .footer{
-
 width:95%;
-
 }
 
 .skills ul{
-
 grid-template-columns:
 repeat(
 auto-fit,
@@ -790,27 +751,21 @@ minmax(130px,1fr)
 .pro{
 
 flex-wrap:wrap;
-
 justify-content:center;
-
 gap:20px;
 
 }
-
 .pro1,
 .pro2,
 .pro3{
 
 width:280px;
-
 }
 
 .contact-info{
 
 flex-wrap:wrap;
-
 justify-content:center;
-
 }
 
 }
@@ -823,133 +778,92 @@ justify-content:center;
 .self{
 
 width:100%;
-
 max-width:none;
-
 margin-top:70px;
-
 }
 
 .photo{
-
 width:100px;
-
 height:100px;
-
 }
 
 .bio{
-
 width:100%;
-
 padding:15px;
-
 }
 
 .footer{
-
 width:100%;
-
 padding:15px;
-
 }
-
 .job,
 .links,
 .mail,
 .resum{
 
 max-width:100%;
-
 }
 
 .skills ul{
 
 grid-template-columns:1fr;
-
 }
 
 
 /* CERTIFICATE */
 
 .certificate{
-
 overflow:hidden;
-
 }
 
 .cer-item{
-
 width:100%;
-
 max-width:100%;
-
 height:auto;
-
 }
 
 .cer-item img{
-
 position:static;
-
 width:100%;
-
 height:auto;
-
 object-fit:contain;
-
 }
 
 
 /* PROJECT */
 
 .pro{
-
 padding:10px;
 
 }
-
 .pro1,
 .pro2,
 .pro3{
 
 width:100%;
-
 max-width:320px;
-
 }
 
 .box-img{
-
 height:180px;
-
 }
 
 .wri{
-
 font-size:1rem;
-
 }
 
 #shw{
-
 margin-left:10px;
-
 }
-
 
 /* FOOTER */
 
 .contact-info{
-
 flex-direction:column;
-
 }
 
 .contact-info a{
-
 word-break:break-word;
-
 }
 
 }

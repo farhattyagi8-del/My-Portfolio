@@ -30,94 +30,58 @@ router.post('/register', async (req, res) => {
         const newUser = new User({
             name,
             email,
-            password: hashedPassword,
+             password: hashedPassword,
         });
 
         const otp = Math.floor(100000 + Math.random()*900000).toString();
-        newUser.otp = otp;
-
+        newUser.otp = otp; 
         newUser.otpExpire = Date.now() + 5*60*1000;
-
         newUser.isVerified = false;
 
-        
         await newUser.save();
-        await sendEmail(
-            email,
-            otp
-        );
-
-        
+        await sendEmail( email,
+            otp );
 
         return res.status(201).json({
-            message: 'OTP sent',
-        });
-
-        
+            message: 'OTP sent',});
 
     } catch (error) {
         console.error('Error during registration:', error);
         return res.status(500).json({ message: 'Internal server error' });
     }
 });
-router.post(
-"/verify-otp",
-
-async(req,res)=>{
+router.post( "/verify-otp", async(req,res)=>{
 
 try{
 
-const {
-email,
-otp
-} = req.body;
-
-const user =
-await User.findOne({
-email
-});
+const { email,otp
+} = req.body; const user = await User.findOne({email});
 
 if(!user){
 
 return res.status(404)
-.json({
-message:
-"User not found"
-});
+.json({message:"User not found"});
 
 }
 
-if(
-user.otp !== otp
-){
+if(user.otp !== otp){
 
 return res.status(400)
-.json({
-message:
-"Invalid OTP"
-});
+.json({message:"Invalid OTP"});
 
 }
 
 if(
 !user.otpExpire || user.otpExpire < Date.now()){
-
 return res.status(400)
 .json({
-message:
-"OTP expired"
-});
+message: "OTP expired"});
 
 }
 
-user.isVerified =
-true;
-
-user.otp =
-null;
-
-user.otpExpire =
-null;
+user.isVerified = true;
+user.otp = null;
+user.otpExpire = null;
 
 await user.save();
 
@@ -127,9 +91,7 @@ console.log("STATUS:", user.isVerified);
 return res.json({
 
 message:
-"Email verified"
-
-});
+"Email verified"});
 
 }
 
@@ -142,7 +104,6 @@ return res.status(500)
 
 message:
 "Server error"
-
 });
 
 }

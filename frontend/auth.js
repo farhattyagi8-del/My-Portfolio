@@ -1,4 +1,4 @@
-// Handle Google OAuth callback
+
 const urlParams = new URLSearchParams(window.location.search);
 const token = urlParams.get('token');
 const error = urlParams.get('error');
@@ -13,15 +13,14 @@ if (error) {
 
 if (token) {
   console.log('Token found, saving to localStorage and redirecting...');
-  // localStorage.setItem('token', token);
-  //  localStorage.setItem('loggedIn', 'true' )  
+
    sessionStorage.setItem("token", token);
    
    sessionStorage.setItem("showLoginSuccess", "true");
-  //  window.location.href = "index.html"; }
 
   const redirectUrl = window.location.origin + '/index.html';
   console.log('Redirecting to:', redirectUrl);
+
   // Use setTimeout to ensure localStorage is written
   setTimeout(() => {
     window.location.href = redirectUrl;
@@ -68,31 +67,20 @@ let isOtpStep = false;
 
 otp.style.display = "none";
 
-
 registerBtn.onclick = () => {
 
 isLogin = false;
 
-title.innerText =
-"Create Account";
+title.innerText = "Create Account";
 
-nameInput.style.display =
-"block";
+nameInput.style.display = "block";
 
-submit.innerText =
-"Register";
+submit.innerText = "Register";
 
-registerBtn.classList.add(
-"active"
-);
+registerBtn.classList.add("active");
 
-loginBtn.classList.remove(
-"active"
-);
-
+loginBtn.classList.remove("active");
 };
-
-
 
 loginBtn.onclick = () => {
 
@@ -103,66 +91,42 @@ otp.style.display = "none";
 
 title.innerText ="Login";
 
-nameInput.style.display =
-"none";
+nameInput.style.display ="none";
 
-submit.innerText =
-"Login";
+submit.innerText ="Login";
 
 loginBtn.classList.add(
-"active"
-);
+"active");
 
 registerBtn.classList.remove(
-"active"
-);
+"active");
 
 };
 
-
-
-form.addEventListener(
-"submit",
+form.addEventListener( "submit",
 
 async (e)=>{
-
 e.preventDefault();
-
 message.innerText="";
 
 if(isOtpStep){
 
-  // try{
-
-  // }
-
-  // catch{
-  //   message.innerText = "OTP verification failed"
-  // }
-
 const response =
 await fetch(
-
 "https://my-portfolio-la7j.onrender.com/api/auth/verify-otp",
 
 {
 
 method:"POST",
-
 headers:{
 "Content-Type":"application/json"
 },
 
 body:
 JSON.stringify({
+email:email.value,
 
-email:
-email.value,
-
-otp:
-otp.value
-
-})
+otp:otp.value})
 
 }
 
@@ -171,9 +135,7 @@ otp.value
 const result =
 await response.json();
 
-message.innerText =
-result.message;
-
+message.innerText = result.message;
 if(response.ok){
 
 email.disabled = false;
@@ -184,129 +146,77 @@ nameInput.disabled = false;
 
 otp.style.disabled = "none";
 
-submit.innerText =
-"Login";
-
-isOtpStep =
-false;
+submit.innerText = "Login";
+isOtpStep = false;
 
 loginBtn.click();
-
 }
-
 return;
-
 }
 
 const data={
-
-email:
-email.value,
+email:email.value,
 
 password:
 password.value
-
 };
 
 if(!isLogin){
 
 data.name=
 nameInput.value;
-
 }
 
 const endpoint=
 isLogin
 ?
-"https://my-portfolio-la7j.onrender.com/api/auth/login"
-
-:
-
+"https://my-portfolio-la7j.onrender.com/api/auth/login":
 "https://my-portfolio-la7j.onrender.com/api/auth/register" ;
 
 try{
 
 const response =
 await fetch(endpoint,{
-
 method:"POST",
 
 headers:{
-
-"Content-Type":
-"application/json"
-
+"Content-Type":"application/json"
 },
 
 body:
 JSON.stringify(data)
-
 }
-
 );
-
 const result =
 await response.json();
 
-
-
 if(response.ok){
-
 if(isLogin){
-
-sessionStorage.setItem(
-
-"token",
-
-result.token
-
-);
-
+sessionStorage.setItem("token",
+result.token);
 sessionStorage.setItem('showLoginSuccess', 'true');
-
-window.location.href= 'index.html';
-
-}
+window.location.href= 'index.html';}
 
 else{
 
-// message.innerText=
-// "Registered Successfully";
-
 message.innerText = "OTP sent to  your email";
-
 email.disabled = true;
 password.disabled = true;
 nameInput.disabled = true;
 otp.style.display = "block";
 submit.innerText = "Verify OTP";
-isOtpStep = true;
-// loginBtn.click();
-
-}
-
+isOtpStep = true; }
 }
 
 else{
-
-message.innerText=
-result.message;
-
-}
-
+ message.innerText=result.message;}
 }
 
 catch{
-
 message.innerText=
 "Server Error";
-
 }
-
-}
-
-);
-
+});
 googleBtn.onclick = () => {
   console.log('Google button clicked, redirecting to OAuth...');
   window.location.href = "https://my-portfolio-la7j.onrender.com/api/auth/google";
