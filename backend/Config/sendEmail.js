@@ -102,19 +102,37 @@ async function sendEmail(
 ){
     try{
         const{data, error } =
+        // await resend.emails.send({
+
+        //     from: process.env.EMAIL_FROM,
+
+        //     to: email,
+
+        //     subject: "Verify your email",
+        //     html: `<h2> Email Verification </h2> 
+        //     <p> Your OTP is: </p>
+        //     <h1>${otp}</h1>
+        //     <p>This OTP expires in 5 minutes. </p>`
+
+        // });
+
+
         await resend.emails.send({
 
-            from: process.env.EMAIL_FROM,
+from: `FarhatTyagi Portfolio <${process.env.EMAIL_FROM}>`,
 
-            to: email,
+to: email,
 
-            subject: "Verify your email",
-            html: `<h2> Email Verification </h2> 
-            <p> Your OTP is: </p>
-            <h1>${otp}</h1>
-            <p>This OTP expires in 5 minutes. </p>`
+subject: "Verify your email",
 
-        });
+html: `
+<h2>Email Verification</h2>
+<p>Your OTP is:</p>
+<h1>${otp}</h1>
+<p>This OTP expires in 5 minutes.</p>
+`
+
+});
 
         if(error) {
             console.error( "EMAIL ERROR:", error);
