@@ -309,5 +309,5 @@ message.innerText=
 
 googleBtn.onclick = () => {
   console.log('Google button clicked, redirecting to OAuth...');
-   window.location.href = 'http://127.0.0.1:5000/api/auth/google';
+   window.location.href = 'https://my-portfolio-la7j.onrender.com/api/auth/google/callback';
 };
