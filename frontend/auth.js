@@ -218,11 +218,11 @@ nameInput.value;
 const endpoint=
 isLogin
 ?
-"https://my-portfolio-la7j.onrender.com/api/login"
+"https://my-portfolio-la7j.onrender.com/api/auth/login"
 
 :
 
-"https://my-portfolio-la7j.onrender.com/api/register" ;
+"https://my-portfolio-la7j.onrender.com/api/auth/register" ;
 
 try{
 
@@ -309,5 +309,5 @@ message.innerText=
 
 googleBtn.onclick = () => {
   console.log('Google button clicked, redirecting to OAuth...');
-  window.location.href = "https://my-portfolio-la7j.onrender.com/api/auth/google/callback";
+  window.location.href = "https://my-portfolio-la7j.onrender.com/api/auth/google";
 };
