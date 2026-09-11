@@ -384,6 +384,9 @@ li:hover {
     object-position: center;
     display: block;
 }
+#cer-2{
+    margin-top: 20px;
+}
 
 .projects{
     height: auto;

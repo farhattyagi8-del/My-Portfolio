@@ -10,7 +10,7 @@ const router  = express.Router();
 
 
 //register route
-router.post('/register', async (req, res) => {
+router.post('/register', async (req, res) => {  // this request comes from frontend auth.js file and it will check if user is already register or not and if user is register then it will send the otp to the user email and if user is not register then it will create the new user and send the otp to the user email
     const { name, email, password } = req.body;
         
     if(!name || !email ||!password){
@@ -38,7 +38,7 @@ router.post('/register', async (req, res) => {
         newUser.otpExpire = Date.now() + 5*60*1000;
         newUser.isVerified = false;
 
-        await newUser.save();
+        await newUser.save();  // thsi will store in the database and then send the otp to the user email
         await sendEmail( email,
             otp );
 
@@ -140,7 +140,7 @@ router.post('/login', async (req, res) => {
        
         console.log('Password match:', isMatch);
        
-        const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
+        const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });  // this code  make token for user and it will be used for authentication and authorization and it will be stored in the local storage and then it will be used for authentication and authorization
 
         return res.status(200).json({  message: "Login successful", token });
     } catch (error) {

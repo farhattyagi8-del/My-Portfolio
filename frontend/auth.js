@@ -103,7 +103,8 @@ registerBtn.classList.remove(
 
 };
 
-form.addEventListener( "submit",
+form.addEventListener( "submit",  // fectching or rigistering here  this is use for checking the user is already register or not and if user is register then it will send the otp to the user email and if user is not register then it will create the new user and send the otp to the user email  
+                                 //this send the request to the backend  and get by express thst will check app post req res register
 
 async (e)=>{
 e.preventDefault();
