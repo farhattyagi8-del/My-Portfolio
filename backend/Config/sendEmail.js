@@ -29,7 +29,7 @@ html: `
 
 });
 
-        if(error) {
+        if(process.env.RESEND_API_KEY === "YOUR_RESEND_API_KEY ERROR"){
             console.error( "EMAIL ERROR:", error);
             throw error;
         }
