@@ -1,11 +1,9 @@
 const express = require('express');
-const sendEmail = require("../Config/sendEmail");
-console.log("authRoutes file loaded")// Ensure this file is being loaded
+const sendEmail = require("../config/sendEmail");
 const bcrypt = require('bcryptjs');
 const User = require('../Models/User');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
-
 const router  = express.Router();
 
 

@@ -2,7 +2,7 @@
 require("dotenv").config();
 const {Resend} = require("resend");
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY); 
 
 async function sendEmail(
     email,
@@ -29,7 +29,7 @@ html: `
 
 });
 
-        if(process.env.RESEND_API_KEY === "YOUR_RESEND_API_KEY ERROR"){
+        if(error){
             console.error( "EMAIL ERROR:", error);
             throw error;
         }
