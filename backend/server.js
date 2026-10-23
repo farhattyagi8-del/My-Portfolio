@@ -6,8 +6,6 @@ dotenv.config();
 const session = require('express-session');
 const passport = require('passport');
 require('./Config/passport'); 
-console.log("passport loaded")// Ensure passport config is loaded
-
 const connectDB = require('./Config/DB');
 
 
@@ -16,8 +14,8 @@ const connectDB = require('./Config/DB');
 const app = express();
 
 
-// const allowedOrigins = ['http://127.0.0.1:5500', 'http://localhost:5500','https://my-portfolio-psi-ivory-67.vercel.app']; 
-const allowedOrigain = ['http://127.0.0.1:5500', 'http://localhost:5500', 'https://my-portfolio-psi-ivory-67.vercel.app/' ]
+ const allowedOrigins = ['https://my-portfolio-psi-ivory-67.vercel.app']; 
+
 
 app.use(cors({
     origin: (origin, callback) => {
