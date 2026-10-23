@@ -1,5 +1,5 @@
 const express = require('express');
-const sendEmail = require("../config/sendEmail");
+const sendEmail = require("../Config/sendEmail");
 const bcrypt = require('bcryptjs');
 const User = require('../Models/User');
 const jwt = require('jsonwebtoken');
